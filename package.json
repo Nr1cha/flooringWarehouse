@@ -4,9 +4,11 @@
   "description": "A backend app for a hypothetical flooring warehouse. This features a database collection with additional collections.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "swagger": "node swagger.js"
   },
-  "author": "",
+  "author": "Nick Richards",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
