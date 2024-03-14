@@ -1,0 +1,24 @@
+{
+  "name": "flooringwarehouse",
+  "version": "1.0.0",
+  "description": "A backend app for a hypothetical flooring warehouse. This features a database collection with additional collections.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-openid-connect": "^2.17.1",
+    "joi": "^17.12.2",
+    "mongodb": "^6.5.0",
+    "nodemon": "^3.1.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
