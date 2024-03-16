@@ -2,12 +2,12 @@ const ObjectId = require('mongodb').ObjectId;
 const Joi = require('joi');
 
 //validate GET-id
-const bookIdSchema = (req, res, next) => {
+const flooringIdSchema = (req, res, next) => {
     const id = req.params.id;
 
     // Check if the id is a valid ObjectId
     if (!ObjectId.isValid(id)) {
-        return res.status(400).json({ error: 'Invalid book id, please add a valid id' });
+        return res.status(400).json({ error: 'Invalid flooring id, please add a valid id' });
     }
 
     // If validation passes, call next() to proceed to the controller function
@@ -15,12 +15,12 @@ const bookIdSchema = (req, res, next) => {
 };
 
 //validate GET-id
-const memberIdSchema = (req, res, next) => {
+const customerIdSchema = (req, res, next) => {
     const id = req.params.id;
 
     // Check if the id is a valid ObjectId
     if (!ObjectId.isValid(id)) {
-        return res.status(400).json({ error: 'Invalid member id, please add a valid id' });
+        return res.status(400).json({ error: 'Invalid customer id, please add a valid id' });
     }
 
     // If validation passes, call next() to proceed to the controller function
@@ -28,7 +28,7 @@ const memberIdSchema = (req, res, next) => {
 };
 
 // Define the schema
-const bookSchema = Joi.object({
+const flooringSchema = Joi.object({
     Title: Joi.string().min(1).required(),
     Author: Joi.string().min(1).required(),
     Genre: Joi.string().min(1).required(),
@@ -39,7 +39,7 @@ const bookSchema = Joi.object({
 });
 
 // Define SECOND schema
-const memberSchema = Joi.object({
+const customerSchema = Joi.object({
     firstName: Joi.string().min(1).required(),
     lastName: Joi.string().min(1).required(),
     email: Joi.string().min(1).required(),
@@ -48,8 +48,8 @@ const memberSchema = Joi.object({
 });
 
 // Validate POST-id
-const validateBookPost = (req, res, next) => {
-    const { error } = bookSchema.validate(req.body);
+const validateFlooringPost = (req, res, next) => {
+    const { error } = flooringSchema.validate(req.body);
 
     if (error) {
         // There are errors. Render the form again with sanitized values/error messages.
@@ -61,8 +61,8 @@ const validateBookPost = (req, res, next) => {
 };
 
 // Validate POST-id
-const validateMemberPost = (req, res, next) => {
-    const { error } = memberSchema.validate(req.body);
+const validateCustomerPost = (req, res, next) => {
+    const { error } = customerSchema.validate(req.body);
 
     if (error) {
         // There are errors. Render the form again with sanitized values/error messages.
@@ -74,4 +74,4 @@ const validateMemberPost = (req, res, next) => {
 };
 
 
-module.exports = { bookIdSchema, memberIdSchema, validateBookPost, validateMemberPost };
+module.exports = { flooringIdSchema, customerIdSchema, validateFlooringPost, validateCustomerPost };
