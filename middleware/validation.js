@@ -29,13 +29,15 @@ const customerIdSchema = (req, res, next) => {
 
 // Define the schema
 const flooringSchema = Joi.object({
-    Title: Joi.string().min(1).required(),
-    Author: Joi.string().min(1).required(),
-    Genre: Joi.string().min(1).required(),
-    Publisher: Joi.string().min(1).required(),
-    ISBN: Joi.number().integer().min(1).required().strict(),
-    PublishedYear: Joi.number().integer().min(1).required().strict(),
-    AvailabilityStatus: Joi.string().min(1).required()
+    Name: Joi.string().min(1).required(),
+    Description: Joi.string().min(1).required(),
+    Price: Joi.string().min(1).required(),
+    Category: Joi.string().min(1).required(),
+    Stock: Joi.number().integer().min(1).required().strict(),
+    Manufacturer: Joi.string().min(1).required(),
+    date_added: Joi.string().min(1).required(),
+    Weight_kg: Joi.number().integer().min(1).required().strict(),
+    Product_id: Joi.number().integer().min(1).required().strict()
 });
 
 // Define SECOND schema

@@ -1,45 +1,46 @@
 # TESTING WAREHOUSE"Flooring_id"
 ###
 
+
 GET http://localhost:3000/floorings HTTP/1.1
 content-type: application/json
 ###
 
-GET http://localhost:3000/books/65c6b153471d16e6f273725d HTTP/1.1
+GET http://localhost:3000/floorings/65f5cd95cbe8b25154edc159 HTTP/1.1
 content-type: application/json
 ###
 
-POST http://localhost:3000/books/65ac0ba81410d142166acbe1 HTTP/1.1
-content-type: application/json
-
-{
-                "Name": "Name",
-                "Description": "Description",
-                "Price": "Price",
-                "Category": "Category",
-                "Stock": "Stock",
-                "Manufacturer": "Manufacturer",
-                "date_added": "date_added",
-                "Weight_kg": "Weight_kg",
-                "Product_id": "Product_id"
-}
-###
-PUT http://localhost:3000/books/create HTTP/1.1
+POST http://localhost:3000/floorings/65f5cd95cbe8b25154edc159 HTTP/1.1
 content-type: application/json
 
 {
-                "Name": "Name",
-                "Description": "Description",
+                "Name": "theTHING",
+                "Description": "WALL",
                 "Price": "Price",
                 "Category": "Category",
-                "Stock": "Stock",
-                "Manufacturer": "Manufacturer",
+                "Stock": 45,
+                "Manufacturer": "dudething",
                 "date_added": "date_added",
-                "Weight_kg": "Weight_kg",
-                "Product_id": "Product_id"
+                "Weight_kg": 34,
+                "Product_id": 24
 }
 ###
-DELETE http://localhost:3000/books/65b5c7ed8d64a476bba785e0 HTTP/1.1
+PUT http://localhost:3000/floorings/create HTTP/1.1
+content-type: application/json
+
+{
+                "Name": "TEST",
+                "Description": "THING",
+                "Price": "Price",
+                "Category": "Category",
+                "Stock": 45,
+                "Manufacturer": "Manufacturer",
+                "date_added": "date_added",
+                "Weight_kg": 34,
+                "Product_id": 24
+}
+###
+DELETE http://localhost:3000/floorings/65f5cd43cbe8b25154edc158 HTTP/1.1
 content-type: application/json
 
 
