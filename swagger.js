@@ -3,7 +3,7 @@ const swaggerAutoGen = require('swagger-autogen')();
 
 const swaggerDefinition = (host, lane) => ({
     info: {
-        title: 'Book API',
+        title: 'Flooring API',
         version: '1.0.0',
         description: 'Manage products',
     },
@@ -11,7 +11,7 @@ const swaggerDefinition = (host, lane) => ({
     schemes: lane === 'local' ? ['http'] : ['https'], // Use 'https' if applicable
     // adding the member API definition
     productsAPI: {
-        title: 'Member API',
+        title: 'Customer API',
         version: '1.0.0',
         description: 'Manage product inventory',
     },

@@ -34,13 +34,13 @@ async function updateFlooring(req, res, next) {
         schema: {
                 Name: 'Name',
                 Description: 'Description',
-                Price: 'Price',
+                Price: 00.00,
                 Category: 'Category',
-                Stock: 'Stock',
+                Stock: 12,
                 Manufacturer: 'Manufacturer',
                 date_added: 'date_added',
-                Weight_kg: 'Weight_kg',
-                Product_id: 'Product_id'
+                Weight_kg: 12,
+                Product_id: 34
         }
     } 
     */
@@ -67,13 +67,13 @@ async function setSingleFlooring(req, res, next) {
             schema: {
                 Name: 'Name',
                 Description: 'Description',
-                Price: 'Price',
+                Price: 00.00,
                 Category: 'Category',
-                Stock: 'Stock',
+                Stock: 12,
                 Manufacturer: 'Manufacturer',
                 date_added: 'date_added',
-                Weight_kg: 'Weight_kg',
-                Product_id: 'Product_id'
+                Weight_kg: 12,
+                Product_id: 34
             }
     } 
     */
