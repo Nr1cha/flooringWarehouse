@@ -1,0 +1,203 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Book API",
+    "version": "1.0.0",
+    "description": "Manage products"
+  },
+  "host": "library-wkyz.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/floorings/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/floorings/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "example": "Name"
+                },
+                "Description": {
+                  "type": "string",
+                  "example": "Description"
+                },
+                "Price": {
+                  "type": "string",
+                  "example": "Price"
+                },
+                "Category": {
+                  "type": "string",
+                  "example": "Category"
+                },
+                "Stock": {
+                  "type": "string",
+                  "example": "Stock"
+                },
+                "Manufacturer": {
+                  "type": "string",
+                  "example": "Manufacturer"
+                },
+                "date_added": {
+                  "type": "string",
+                  "example": "date_added"
+                },
+                "Weight_kg": {
+                  "type": "string",
+                  "example": "Weight_kg"
+                },
+                "Product_id": {
+                  "type": "string",
+                  "example": "Product_id"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/floorings/create": {
+      "put": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "example": "Name"
+                },
+                "Description": {
+                  "type": "string",
+                  "example": "Description"
+                },
+                "Price": {
+                  "type": "string",
+                  "example": "Price"
+                },
+                "Category": {
+                  "type": "string",
+                  "example": "Category"
+                },
+                "Stock": {
+                  "type": "string",
+                  "example": "Stock"
+                },
+                "Manufacturer": {
+                  "type": "string",
+                  "example": "Manufacturer"
+                },
+                "date_added": {
+                  "type": "string",
+                  "example": "date_added"
+                },
+                "Weight_kg": {
+                  "type": "string",
+                  "example": "Weight_kg"
+                },
+                "Product_id": {
+                  "type": "string",
+                  "example": "Product_id"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "productsAPI": {
+    "title": "Member API",
+    "version": "1.0.0",
+    "description": "Manage product inventory"
+  }
+}

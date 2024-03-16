@@ -32,15 +32,15 @@ async function updateFlooring(req, res, next) {
         /*  #swagger.parameters['body'] = {
         in: 'body',
         schema: {
-                Name: payload.Name,
-                Description: payload.Description,
-                Price: payload.Price,
-                Category: payload.Category,
-                Stock: payload.Stock,
-                Manufacturer: payload.Manufacturer,
-                date_added: payload.date_added,
-                Weight_kg: payload.Weight_kg,
-                Product_id: payload.Product_id
+                Name: 'Name',
+                Description: 'Description',
+                Price: 'Price',
+                Category: 'Category',
+                Stock: 'Stock',
+                Manufacturer: 'Manufacturer',
+                date_added: 'date_added',
+                Weight_kg: 'Weight_kg',
+                Product_id: 'Product_id'
         }
     } 
     */
@@ -65,15 +65,15 @@ async function setSingleFlooring(req, res, next) {
         /*  #swagger.parameters['body'] = {
         in: 'body',
             schema: {
-                Name: payload.Name,
-                Description: payload.Description,
-                Price: payload.Price,
-                Category: payload.Category,
-                Stock: payload.Stock,
-                Manufacturer: payload.Manufacturer,
-                date_added: payload.date_added,
-                Weight_kg: payload.Weight_kg,
-                Product_id: payload.Product_id
+                Name: 'Name',
+                Description: 'Description',
+                Price: 'Price',
+                Category: 'Category',
+                Stock: 'Stock',
+                Manufacturer: 'Manufacturer',
+                date_added: 'date_added',
+                Weight_kg: 'Weight_kg',
+                Product_id: 'Product_id'
             }
     } 
     */
