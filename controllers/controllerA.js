@@ -1,33 +1,33 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:3000/";
-const { getAllBooksModel, updateBookModel, getSingleBookModel, setSingleBookModel, deleteSingleBookModel } = require("../models/book");
+const { getAllFlooringsModel, updateFlooringModel, getSingleFlooringModel, setSingleFlooringModel, deleteSingleFlooringModel } = require("../models/flooring");
 
-//get a list of all books
-async function getAllBooks(req, res, next) {
+//get a list of all floorings
+async function getAllFloorings(req, res, next) {
     try {
         // throw new Error('Intentional Error'); //testing error
-        const bookCollection = await getAllBooksModel();
+        const flooringCollection = await getAllFlooringsModel();
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(bookCollection);
+        res.status(200).json(flooringCollection);
     } catch (err) {
         next(err);
     }
 }
 
-//get a single book
-async function getSingleBook(req, res, next) {
+//get a single flooring
+async function getSingleFlooring(req, res, next) {
     try {
         // throw new Error('Intentional Error'); //testing error
-        const singleBook = await getSingleBookModel(req.params.id);
+        const singleFlooring = await getSingleFlooringModel(req.params.id);
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(singleBook);
+        res.status(200).json(singleFlooring);
     } catch (err) {
         next(err);
     }
 }
 
 //post logic
-async function updateBook(req, res, next) {
+async function updateFlooring(req, res, next) {
     try {
         /*  #swagger.parameters['body'] = {
         in: 'body',
@@ -43,14 +43,14 @@ async function updateBook(req, res, next) {
     } 
     */
         const payload = req.body;
-        const response = await updateBookModel(req.params.id, payload);
+        const response = await updateFlooringModel(req.params.id, payload);
         res.setHeader('Content-Type', 'application/json');
         if (response.acknowledged) {
             res.status(201).json({
                 updated: true
             });
         } else {
-            res.status(500).json(response.err || 'Some error occurred while creating the book entry.');
+            res.status(500).json(response.err || 'Some error occurred while creating the flooring entry.');
         }
     } catch (err) {
         next(err)
@@ -58,23 +58,25 @@ async function updateBook(req, res, next) {
 }
 
 // adding put logic
-async function setSingleBook(req, res, next) {
+async function setSingleFlooring(req, res, next) {
     try {
         /*  #swagger.parameters['body'] = {
         in: 'body',
             schema: {
-                    Title: 'Title',
-                    Author: 'Author',
-                    Genre: 'Genre',
-                    Publisher: 'Publisher',
-                    ISBN: 12345,
-                    PublishedYear: 1988,
-                    AvailabilityStatus: 'AvailabilityStatus'
+                Name: payload.Name,
+                Description: payload.Description,
+                Price: payload.Price,
+                Category: payload.Category,
+                Stock: payload.Stock,
+                Manufacturer: payload.Manufacturer,
+                date_added: payload.date_added,
+                Weight_kg: payload.Weight_kg,
+                Product_id: payload.Product_id
             }
     } 
     */
         const payload = req.body;
-        const response = await setSingleBookModel(payload);
+        const response = await setSingleFlooringModel(payload);
         res.setHeader('Content-Type', 'application/json');
         if (response.acknowledged) {
             res.status(204).json({
@@ -82,7 +84,7 @@ async function setSingleBook(req, res, next) {
             });
         } else {
             console.log(response)
-            res.status(500).json(response.error || 'Some error occurred while creating the book.');
+            res.status(500).json(response.error || 'Some error occurred while creating the flooring.');
         }
     } catch (err) {
         next(err)
@@ -90,16 +92,16 @@ async function setSingleBook(req, res, next) {
 }
 
 // delete logic
-async function deleteSingleBook(req, res, next) {
+async function deleteSingleFlooring(req, res, next) {
     try {
-        const singleBook = await deleteSingleBookModel(req.params.id);
+        const singleFlooring = await deleteSingleFlooringModel(req.params.id);
 
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(singleBook);
+        res.status(200).json(singleFlooring);
     }
     catch (err) {
         next(err);
     }
 }
 
-module.exports = { getAllBooks, updateBook, getSingleBook, setSingleBook, deleteSingleBook };
+module.exports = { getAllFloorings, updateFlooring, getSingleFlooring, setSingleFlooring, deleteSingleFlooring };
