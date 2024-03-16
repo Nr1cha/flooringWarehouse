@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 
 const url = process.env.MONGODB_URI
 const client = new MongoClient(url);
-const dbName = 'LibraryManagementSystem';
+const dbName = 'FlooringWarehouse';
 let _db;
 
 module.exports = {
