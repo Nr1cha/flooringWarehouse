@@ -32,13 +32,15 @@ async function updateFlooring(req, res, next) {
         /*  #swagger.parameters['body'] = {
         in: 'body',
         schema: {
-                Title: 'Title',
-                Author: 'Author',
-                Genre: 'Genre',
-                Publisher: 'Publisher',
-                ISBN: 12345,
-                PublishedYear: 1998,
-                AvailabilityStatus: 'AvailabilityStatus'
+                Name: payload.Name,
+                Description: payload.Description,
+                Price: payload.Price,
+                Category: payload.Category,
+                Stock: payload.Stock,
+                Manufacturer: payload.Manufacturer,
+                date_added: payload.date_added,
+                Weight_kg: payload.Weight_kg,
+                Product_id: payload.Product_id
         }
     } 
     */

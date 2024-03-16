@@ -1,0 +1,169 @@
+# TESTING WAREHOUSE"Flooring_id"
+###
+GET http://localhost:3000/books HTTP/1.1
+content-type: application/json
+###
+
+GET http://localhost:3000/books/65c6b153471d16e6f273725d HTTP/1.1
+content-type: application/json
+###
+
+POST http://localhost:3000/books/65ac0ba81410d142166acbe1 HTTP/1.1
+content-type: application/json
+
+{
+                "Name": "Name",
+                "Description": "Description",
+                "Price": "Price",
+                "Category": "Category",
+                "Stock": "Stock",
+                "Manufacturer": "Manufacturer",
+                "date_added": "date_added",
+                "Weight_kg": "Weight_kg",
+                "Product_id": "Product_id"
+}
+###
+PUT http://localhost:3000/books/create HTTP/1.1
+content-type: application/json
+
+{
+                "Name": "Name",
+                "Description": "Description",
+                "Price": "Price",
+                "Category": "Category",
+                "Stock": "Stock",
+                "Manufacturer": "Manufacturer",
+                "date_added": "date_added",
+                "Weight_kg": "Weight_kg",
+                "Product_id": "Product_id"
+}
+###
+DELETE http://localhost:3000/books/65b5c7ed8d64a476bba785e0 HTTP/1.1
+content-type: application/json
+
+
+
+
+# # TESTING MEMBER
+# ###
+# GET http://localhost:3000/members HTTP/1.1
+# content-type: application/json
+# ###
+
+
+
+# GET http://localhost:3000/members/65e1085a4c4d2bd88dab8f6e HTTP/1.1
+# content-type: application/json
+# ###
+
+
+
+# POST http://localhost:3000/members/65e1085a4c4d2bd88dab8f6e HTTP/1.1
+# content-type: application/json
+
+# {
+#                 "Name": "Name",
+#                 "Description": "Description",
+#                 "Price": "Price",
+#                 "Category": "Category",
+#                 "Stock": "Stock",
+#                 "Manufacturer": "Manufacturer",
+#                 "date_added": "date_added",
+#                 "Weight_kg": "Weight_kg",
+#                 "Product_id": "Product_id"
+# }
+
+# ###
+
+
+# PUT http://localhost:3000/members/create HTTP/1.1
+# content-type: application/json
+
+# {
+#                 "Name": "Name",
+#                 "Description": "Description",
+#                 "Price": "Price",
+#                 "Category": "Category",
+#                 "Stock": "Stock",
+#                 "Manufacturer": "Manufacturer",
+#                 "date_added": "date_added",
+#                 "Weight_kg": "Weight_kg",
+#                 "Product_id": "Product_id"
+# }
+
+
+# ###
+# DELETE http://localhost:3000/members/65e1085a4c4d2bd88dab8f6e HTTP/1.1
+# content-type: application/json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ###
+# # RENDER PROD TESTING
+
+
+# GET https://library-wkyz.onrender.com/books HTTP/1.1
+# content-type: application/json
+# ###
+
+
+
+# GET https://library-wkyz.onrender.com/books/65c6b153471d16e6f273725d HTTP/1.1
+# content-type: application/json
+# ###
+
+
+
+# POST https://library-wkyz.onrender.com/books/65c6b153471d16e6f273725d HTTP/1.1
+# content-type: application/json
+
+# {
+#                 "Name": "Name",
+#                 "Description": "Description",
+#                 "Price": "Price",
+#                 "Category": "Category",
+#                 "Stock": "Stock",
+#                 "Manufacturer": "Manufacturer",
+#                 "date_added": "date_added",
+#                 "Weight_kg": "Weight_kg",
+#                 "Product_id": "Product_id"
+# }
+
+# ###
+
+
+# PUT https://library-wkyz.onrender.com/books/create HTTP/1.1
+# content-type: application/json
+
+# {
+#                 "Name": "Name",
+#                 "Description": "Description",
+#                 "Price": "Price",
+#                 "Category": "Category",
+#                 "Stock": "Stock",
+#                 "Manufacturer": "Manufacturer",
+#                 "date_added": "date_added",
+#                 "Weight_kg": "Weight_kg",
+#                 "Product_id": "Product_id"
+# }
+
+
+# ###
+# DELETE https://library-wkyz.onrender.com/books/65b5c7ed8d64a476bba785e0 HTTP/1.1
+# content-type: application/json
