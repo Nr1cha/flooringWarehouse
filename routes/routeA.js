@@ -1,29 +1,29 @@
 const express = require('express');
 const router = express.Router();
 const {
-    getAllMembers,
-    updateMember,
-    getSingleMember,
-    setSingleMember,
-    deleteSingleMember
-} = require('../controllers/memberController');
-const { memberIdSchema,
-    validateMemberPost
+    getAllProducts,
+    updateProduct,
+    getSingleProduct,
+    setSingleProduct,
+    deleteSingleProduct
+} = require('../controllers/warehouseController');
+const { productIdSchema,
+    validateProductPost
 } = require('../middleware/validation');
 
 // GET request for list of all Member items.
-router.get('/', getAllMembers);
+router.get('/', getAllProducts);
 
 //GET single member
-router.get("/:id", memberIdSchema, getSingleMember);
+router.get("/:id", productIdSchema, getSingleProduct);
 
 // POST request for creating Member.
-router.post('/:id', validateMemberPost, updateMember);
+router.post('/:id', validateProductPost, updateProduct);
 
 //put route
-router.put('/create', validateMemberPost, setSingleMember);
+router.put('/create', validateProductPost, setSingleProduct);
 
 //delete route
-router.delete('/:id', memberIdSchema, deleteSingleMember);
+router.delete('/:id', productIdSchema, deleteSingleProduct);
 
 module.exports = router;
