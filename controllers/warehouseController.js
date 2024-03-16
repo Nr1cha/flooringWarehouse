@@ -28,13 +28,12 @@ async function getSingleFlooring(req, res, next) {
 
 //post logic
 async function updateFlooring(req, res, next) {
-    try {
-        /*  #swagger.parameters['body'] = {
+    /*  #swagger.parameters['body'] = {
         in: 'body',
         schema: {
                 Name: 'Name',
                 Description: 'Description',
-                Price: 00.00,
+                Price: 1,
                 Category: 'Category',
                 Stock: 12,
                 Manufacturer: 'Manufacturer',
@@ -42,8 +41,8 @@ async function updateFlooring(req, res, next) {
                 Weight_kg: 12,
                 Product_id: 34
         }
-    } 
-    */
+    } */
+    try {
         const payload = req.body;
         const response = await updateFlooringModel(req.params.id, payload);
         res.setHeader('Content-Type', 'application/json');
@@ -61,22 +60,23 @@ async function updateFlooring(req, res, next) {
 
 // adding put logic
 async function setSingleFlooring(req, res, next) {
-    try {
-        /*  #swagger.parameters['body'] = {
+    /*  #swagger.parameters['body'] = {
         in: 'body',
-            schema: {
+        schema: {
                 Name: 'Name',
                 Description: 'Description',
-                Price: 00.00,
+                Price: 1,
                 Category: 'Category',
                 Stock: 12,
                 Manufacturer: 'Manufacturer',
                 date_added: 'date_added',
                 Weight_kg: 12,
                 Product_id: 34
-            }
+        }
     } 
     */
+
+    try {
         const payload = req.body;
         const response = await setSingleFlooringModel(payload);
         res.setHeader('Content-Type', 'application/json');

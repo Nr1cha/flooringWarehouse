@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Book API",
+    "title": "Flooring API",
     "version": "1.0.0",
     "description": "Manage products"
   },
@@ -74,16 +74,16 @@
                   "example": "Description"
                 },
                 "Price": {
-                  "type": "string",
-                  "example": "Price"
+                  "type": "number",
+                  "example": 1
                 },
                 "Category": {
                   "type": "string",
                   "example": "Category"
                 },
                 "Stock": {
-                  "type": "string",
-                  "example": "Stock"
+                  "type": "number",
+                  "example": 12
                 },
                 "Manufacturer": {
                   "type": "string",
@@ -94,12 +94,12 @@
                   "example": "date_added"
                 },
                 "Weight_kg": {
-                  "type": "string",
-                  "example": "Weight_kg"
+                  "type": "number",
+                  "example": 12
                 },
                 "Product_id": {
-                  "type": "string",
-                  "example": "Product_id"
+                  "type": "number",
+                  "example": 34
                 }
               }
             }
@@ -162,16 +162,16 @@
                   "example": "Description"
                 },
                 "Price": {
-                  "type": "string",
-                  "example": "Price"
+                  "type": "number",
+                  "example": 1
                 },
                 "Category": {
                   "type": "string",
                   "example": "Category"
                 },
                 "Stock": {
-                  "type": "string",
-                  "example": "Stock"
+                  "type": "number",
+                  "example": 12
                 },
                 "Manufacturer": {
                   "type": "string",
@@ -182,12 +182,12 @@
                   "example": "date_added"
                 },
                 "Weight_kg": {
-                  "type": "string",
-                  "example": "Weight_kg"
+                  "type": "number",
+                  "example": 12
                 },
                 "Product_id": {
-                  "type": "string",
-                  "example": "Product_id"
+                  "type": "number",
+                  "example": 34
                 }
               }
             }
@@ -208,7 +208,7 @@
     }
   },
   "productsAPI": {
-    "title": "Member API",
+    "title": "Customer API",
     "version": "1.0.0",
     "description": "Manage product inventory"
   }
