@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
-const { connectToServer } = require("./db/db");
+const { connectToServer } = require("./db");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const cors = require("cors");
-const { auth, requresAuth } = require("express-openid-connect");
+const { auth, requiresAuth } = require("express-openid-connect");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,7 +15,7 @@ const config = {
     auth0Logout: true,
     secret: process.env.SECRET,
     baseURL: process.env.BASE_URL,
-    clientID: process.env.CLIEND_ID,
+    clientID: process.env.CLIENT_ID,
     issuerBaseURL: process.env.ISSUER_BASE_URL
 };
 
@@ -32,7 +32,8 @@ app.get('/', (req, res) => {
 });
 
 //use the requiresAuth middleware for the routes i want to protect
-app.use('/', requiresAuth(), routes) //protect all routes
+// app.use('/', requiresAuth(), routes) //protect all routes
+app.use('/', routes) //protect all routes
 
 // Add the /profile route from the first code block
 app.get('/profile', requiresAuth(), (req, res) => {
