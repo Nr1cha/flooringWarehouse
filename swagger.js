@@ -20,5 +20,10 @@ const swaggerDefinition = (host, lane) => ({
 });
 const routes = ['./routes/index.js'];
 
-swaggerAutoGen(`./swagger-output-${process.env.LANE_LOCAL}.json`, routes, swaggerDefinition(process.env.HOST_LOCAL, process.env.LANE_LOCAL));
-swaggerAutoGen(`./swagger-output-${process.env.LANE_PROD}.json`, routes, swaggerDefinition(process.env.HOST_PROD, process.env.LANE_PROD));
+swaggerAutoGen(
+    `./swagger-output-${process.env.CURRENT_LANE}.json`,
+    routes,
+    swaggerDefinition(process.env.HOST, process.env.CURRENT_LANE)
+).then(() => {
+    require('./server.js'); // Your project's root file
+});
