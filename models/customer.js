@@ -8,13 +8,13 @@ async function getAllCustomersModel() {
 };
 
 //get single customer
-async function getSingleMemberModel(id) {
+async function getSingleCustomerModel(id) {
     const db = await getDb();
     return db.collection("customers").find({ "_id": new ObjectId(id) }).toArray();
 };
 
 //post function
-async function updateMemberModel(id, payload = {}) {
+async function updateCustomerModel(id, payload = {}) {
     const db = await getDb();
     return db.collection("customers").updateOne(
         { "_id": new ObjectId(id) },
@@ -23,8 +23,7 @@ async function updateMemberModel(id, payload = {}) {
                 firstName: payload.firstName,
                 lastName: payload.lastName,
                 email: payload.email,
-                phone: payload.phone,
-                memstatus: payload.memstatus
+                phoneNumber: payload.phone
             }
         }
     )
@@ -32,7 +31,7 @@ async function updateMemberModel(id, payload = {}) {
 
 
 // put function for customer
-async function setSingleMemberModel(payload = {}) {
+async function setSingleCustomerModel(payload = {}) {
     const db = await getDb();
 
     return db.collection("customers").insertOne(
@@ -40,8 +39,7 @@ async function setSingleMemberModel(payload = {}) {
             firstName: payload.firstName,
             lastName: payload.lastName,
             email: payload.email,
-            phone: payload.phone,
-            memstatus: payload.memstatus
+            phoneNumber: payload.phone
         }
     )
 };
@@ -49,7 +47,7 @@ async function setSingleMemberModel(payload = {}) {
 
 
 // delete funtion
-async function deleteSingleMemberModel(id) {
+async function deleteSingleCustomerModel(id) {
     const db = await getDb();
 
     return db.collection("customers").deleteOne(
@@ -57,4 +55,4 @@ async function deleteSingleMemberModel(id) {
     );
 };
 
-module.exports = { getAllCustomersModel, updateMemberModel, getSingleMemberModel, setSingleMemberModel, deleteSingleMemberModel };
+module.exports = { getAllCustomersModel, updateCustomerModel, getSingleCustomerModel, setSingleCustomerModel, deleteSingleCustomerModel };

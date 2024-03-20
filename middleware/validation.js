@@ -45,8 +45,7 @@ const customerSchema = Joi.object({
     firstName: Joi.string().min(1).required(),
     lastName: Joi.string().min(1).required(),
     email: Joi.string().min(1).required(),
-    phone: Joi.string().min(1).required(),
-    memstatus: Joi.string().min(1).required()
+    phoneNumber: Joi.number().min(1).required().strict()
 });
 
 // Validate POST-id

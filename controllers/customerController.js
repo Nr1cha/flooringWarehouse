@@ -35,8 +35,7 @@ async function updateCustomer(req, res, next) {
                 firstName: 'firstName',
                 lastName: 'lastName',
                 email: 'example@email.com',
-                phone: '555-555-555',
-                memstatus: 'Active'
+                phoneNumber: 555555555
         }
     } 
     */
@@ -64,8 +63,7 @@ async function setSingleCustomer(req, res, next) {
                 firstName: 'firstName',
                 lastName: 'lastName',
                 email: 'example@email.com',
-                phone: '555-555-555',
-                memstatus: 'Active'
+                phoneNumber: 555555555
         }
     } 
     */
