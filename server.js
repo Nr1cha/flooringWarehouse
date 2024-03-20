@@ -19,21 +19,21 @@ const config = {
     issuerBaseURL: process.env.ISSUER_BASE_URL
 };
 
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
+// // auth router attaches /login, /logout, and /callback routes to the baseURL
+// app.use(auth(config));
 
-// req.isAuthenticated is provided from the auth router
-app.get('/', (req, res) => {
-    if (!req.oidc.isAuthenticated()) {
-        res.send('Logged out')
-    } else {
-        res.send('Logged in');
-    }
-});
+// // req.isAuthenticated is provided from the auth router
+// app.get('/', (req, res) => {
+//     if (!req.oidc.isAuthenticated()) {
+//         res.send('Logged out')
+//     } else {
+//         res.send('Logged in');
+//     }
+// });
 
 //use the requiresAuth middleware for the routes i want to protect
-app.use('/', requiresAuth(), routes) //protect all routes
-// app.use('/', routes) //protect all routes
+// app.use('/', requiresAuth(), routes) //protect all routes
+app.use('/', routes) //protect all routes
 
 // Add the /profile route from the first code block
 app.get('/profile', requiresAuth(), (req, res) => {

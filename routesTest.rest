@@ -46,57 +46,47 @@ content-type: application/json
 
 
 
-# # TESTING MEMBER
-# ###
-# GET http://localhost:3000/members HTTP/1.1
-# content-type: application/json
-# ###
+# TESTING CUSTOMER
+###
+GET http://localhost:3000/customers/ HTTP/1.1
+content-type: application/json
+###
 
 
 
-# GET http://localhost:3000/members/65e1085a4c4d2bd88dab8f6e HTTP/1.1
-# content-type: application/json
-# ###
+GET http://localhost:3000/customers/65fb5306bb2dc7041c331748 HTTP/1.1
+content-type: application/json
+###
 
 
 
-# POST http://localhost:3000/members/65e1085a4c4d2bd88dab8f6e HTTP/1.1
-# content-type: application/json
+POST http://localhost:3000/customers/65fb5306bb2dc7041c331748 HTTP/1.1
+content-type: application/json
 
-# {
-#                 "Name": "Name",
-#                 "Description": "Description",
-#                 "Price": "Price",
-#                 "Category": "Category",
-#                 "Stock": "Stock",
-#                 "Manufacturer": "Manufacturer",
-#                 "date_added": "date_added",
-#                 "Weight_kg": "Weight_kg",
-#                 "Product_id": "Product_id"
-# }
+{
+                "firstName": "NiCk",
+                "lastName": "RiCaRdS",
+                "email": "example@email.com",
+                "phoneNumber": 555555555
+}
 
-# ###
+###
 
 
-# PUT http://localhost:3000/members/create HTTP/1.1
-# content-type: application/json
+PUT http://localhost:3000/customers/create HTTP/1.1
+content-type: application/json
 
-# {
-#                 "Name": "Name",
-#                 "Description": "Description",
-#                 "Price": "Price",
-#                 "Category": "Category",
-#                 "Stock": "Stock",
-#                 "Manufacturer": "Manufacturer",
-#                 "date_added": "date_added",
-#                 "Weight_kg": "Weight_kg",
-#                 "Product_id": "Product_id"
-# }
+{
+                "firstName": "tester",
+                "lastName": "rester",
+                "email": "example@email.com",
+                "phoneNumber": 777777777
+}
 
 
-# ###
-# DELETE http://localhost:3000/members/65e1085a4c4d2bd88dab8f6e HTTP/1.1
-# content-type: application/json
+###
+DELETE http://localhost:3000/customers/65fb57cb324624a393f5c8d4 HTTP/1.1
+content-type: application/json
 
 
 
