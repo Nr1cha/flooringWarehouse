@@ -7,7 +7,7 @@ const {
     setSingleCustomer,
     deleteSingleCustomer
 } = require('../controllers/customerController');
-const { CustomerIdSchema,
+const { customerIdSchema,
     validateCustomerPost
 } = require('../middleware/validation');
 
@@ -15,7 +15,7 @@ const { CustomerIdSchema,
 router.get('/', getAllCustomers);
 
 //GET single member
-router.get("/:id", CustomerIdSchema, getSingleCustomer);
+router.get("/:id", customerIdSchema, getSingleCustomer);
 
 // POST request for creating Member.
 router.post('/:id', validateCustomerPost, updateCustomer);
@@ -24,6 +24,6 @@ router.post('/:id', validateCustomerPost, updateCustomer);
 router.put('/create', validateCustomerPost, setSingleCustomer);
 
 //delete route
-router.delete('/:id', CustomerIdSchema, deleteSingleCustomer);
+router.delete('/:id', customerIdSchema, deleteSingleCustomer);
 
 module.exports = router;
