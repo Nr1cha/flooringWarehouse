@@ -1,22 +1,22 @@
 const { ObjectId } = require("mongodb");
 const { getDb } = require("../db");
 
-//get all members
-async function getAllMembersModel() {
+//get all customers
+async function getAllCustomersModel() {
     const db = await getDb();
-    return db.collection("member").find().toArray();
+    return db.collection("customers").find().toArray();
 };
 
-//get single member
+//get single customer
 async function getSingleMemberModel(id) {
     const db = await getDb();
-    return db.collection("member").find({ "_id": new ObjectId(id) }).toArray();
+    return db.collection("customers").find({ "_id": new ObjectId(id) }).toArray();
 };
 
 //post function
 async function updateMemberModel(id, payload = {}) {
     const db = await getDb();
-    return db.collection("member").updateOne(
+    return db.collection("customers").updateOne(
         { "_id": new ObjectId(id) },
         {
             $set: {
@@ -31,11 +31,11 @@ async function updateMemberModel(id, payload = {}) {
 }
 
 
-// put function for member
+// put function for customer
 async function setSingleMemberModel(payload = {}) {
     const db = await getDb();
 
-    return db.collection("member").insertOne(
+    return db.collection("customers").insertOne(
         {
             firstName: payload.firstName,
             lastName: payload.lastName,
@@ -52,9 +52,9 @@ async function setSingleMemberModel(payload = {}) {
 async function deleteSingleMemberModel(id) {
     const db = await getDb();
 
-    return db.collection("member").deleteOne(
+    return db.collection("customers").deleteOne(
         { "_id": new ObjectId(id) }
     );
 };
 
-module.exports = { getAllMembersModel, updateMemberModel, getSingleMemberModel, setSingleMemberModel, deleteSingleMemberModel };
+module.exports = { getAllCustomersModel, updateMemberModel, getSingleMemberModel, setSingleMemberModel, deleteSingleMemberModel };

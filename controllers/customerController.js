@@ -1,33 +1,33 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:3000/";
-const { getAllMembersModel, updateMemberModel, getSingleMemberModel, setSingleMemberModel, deleteSingleMemberModel } = require("../models/member");
+const { getAllCustomersModel, updateCustomerModel, getSingleCustomerModel, setSingleCustomerModel, deleteSingleCustomerModel } = require("../models/customer");
 
 //get a list of all books
-async function getAllMembers(req, res, next) {
+async function getAllCustomers(req, res, next) {
     try {
         // throw new Error('Intentional Error'); //testing error
-        const memberCollection = await getAllMembersModel();
+        const CustomerCollection = await getAllCustomersModel();
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(memberCollection);
+        res.status(200).json(CustomerCollection);
     } catch (err) {
         next(err);
     }
 }
 
 //get a single book
-async function getSingleMember(req, res, next) {
+async function getSingleCustomer(req, res, next) {
     try {
         // throw new Error('Intentional Error'); //testing error
-        const singleMember = await getSingleMemberModel(req.params.id);
+        const singleCustomer = await getSingleCustomerModel(req.params.id);
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(singleMember);
+        res.status(200).json(singleCustomer);
     } catch (err) {
         next(err);
     }
 }
 
 //post logic
-async function updateMember(req, res, next) {
+async function updateCustomer(req, res, next) {
     try {
         /*  #swagger.parameters['body'] = {
         in: 'body',
@@ -41,7 +41,7 @@ async function updateMember(req, res, next) {
     } 
     */
         const payload = req.body;
-        const response = await updateMemberModel(req.params.id, payload);
+        const response = await updateCustomerModel(req.params.id, payload);
         res.setHeader('Content-Type', 'application/json');
         if (response.acknowledged) {
             res.status(201).json({
@@ -56,7 +56,7 @@ async function updateMember(req, res, next) {
 }
 
 // adding put logic
-async function setSingleMember(req, res, next) {
+async function setSingleCustomer(req, res, next) {
     try {
         /*  #swagger.parameters['body'] = {
         in: 'body',
@@ -70,7 +70,7 @@ async function setSingleMember(req, res, next) {
     } 
     */
         const payload = req.body;
-        const response = await setSingleMemberModel(payload);
+        const response = await setSingleCustomerModel(payload);
         res.setHeader('Content-Type', 'application/json');
         if (response.acknowledged) {
             res.status(204).json({
@@ -86,16 +86,16 @@ async function setSingleMember(req, res, next) {
 }
 
 // delete logic
-async function deleteSingleMember(req, res, next) {
+async function deleteSingleCustomer(req, res, next) {
     try {
-        const singleMember = await deleteSingleMemberModel(req.params.id);
+        const singleCustomer = await deleteSingleCustomerModel(req.params.id);
 
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(singleMember);
+        res.status(200).json(singleCustomer);
     }
     catch (err) {
         next(err);
     }
 }
 
-module.exports = { getAllMembers, updateMember, getSingleMember, setSingleMember, deleteSingleMember };
+module.exports = { getAllCustomers, updateCustomer, getSingleCustomer, setSingleCustomer, deleteSingleCustomer };
