@@ -360,11 +360,203 @@
           }
         }
       }
+    },
+    "/employees/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/employees/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "firstName"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "lastName"
+                },
+                "emp_id": {
+                  "type": "number",
+                  "example": 97
+                },
+                "emp_email": {
+                  "type": "string",
+                  "example": "example@email.com"
+                },
+                "emp_phone": {
+                  "type": "number",
+                  "example": 555555555
+                },
+                "hire_date": {
+                  "type": "number",
+                  "example": 0.0004997501249375312
+                },
+                "job_title": {
+                  "type": "string",
+                  "example": "manager"
+                },
+                "Department": {
+                  "type": "string",
+                  "example": "flooring"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/employees/create": {
+      "put": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "firstName"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "lastName"
+                },
+                "emp_id": {
+                  "type": "number",
+                  "example": 97
+                },
+                "emp_email": {
+                  "type": "string",
+                  "example": "example@email.com"
+                },
+                "emp_phone": {
+                  "type": "number",
+                  "example": 555555555
+                },
+                "hire_date": {
+                  "type": "number",
+                  "example": 0.0004997501249375312
+                },
+                "job_title": {
+                  "type": "string",
+                  "example": "manager"
+                },
+                "Department": {
+                  "type": "string",
+                  "example": "flooring"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
-  "productsAPI": {
+  "CustomElementRegistryAPI": {
     "title": "Customer API",
     "version": "1.0.0",
-    "description": "Manage product inventory"
+    "description": "Manage customers"
+  },
+  "employeeAPI": {
+    "title": "Employee API",
+    "version": "1.0.0",
+    "description": "Manage employees"
   }
 }

@@ -1,29 +1,29 @@
 const express = require('express');
 const router = express.Router();
 const {
-    getAllBooks,
-    updateBook,
-    getSingleBook,
-    setSingleBook,
-    deleteSingleBook
-} = require('../controllers/bookController');
-const { bookIdSchema,
-    validateBookPost
+    getAllEmployees,
+    updateEmployee,
+    getSingleEmployee,
+    setSingleEmployee,
+    deleteSingleEmployee
+} = require('../controllers/employeeController');
+const { employeeIdSchema,
+    validateEmployeePost
 } = require('../middleware/validation');
 
-// GET request for list of all Book items.
-router.get('/', getAllBooks);
+// GET request for list of all Employee items.
+router.get('/', getAllEmployees);
 
-//GET single book
-router.get("/:id", bookIdSchema, getSingleBook);
+//GET single employee
+router.get("/:id", employeeIdSchema, getSingleEmployee);
 
-// POST request for creating Book.
-router.post('/:id', validateBookPost, updateBook);
+// POST request for creating Employee.
+router.post('/:id', validateEmployeePost, updateEmployee);
 
 //put route
-router.put('/create', validateBookPost, setSingleBook);
+router.put('/create', validateEmployeePost, setSingleEmployee);
 
 //delete route
-router.delete('/:id', bookIdSchema, deleteSingleBook);
+router.delete('/:id', employeeIdSchema, deleteSingleEmployee);
 
 module.exports = router;
