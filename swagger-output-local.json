@@ -7,12 +7,33 @@
   },
   "host": "localhost:3000",
   "basePath": "/",
+  "tags": [
+    {
+      "name": "Floorings",
+      "description": "Operations related to floorings"
+    },
+    {
+      "name": "Customer",
+      "description": "Operations related to customers"
+    },
+    {
+      "name": "Employee",
+      "description": "Operations related to employees"
+    },
+    {
+      "name": "Order",
+      "description": "Operations related to orders"
+    }
+  ],
   "schemes": [
     "http"
   ],
   "paths": {
     "/floorings/": {
       "get": {
+        "tags": [
+          "Floorings"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -26,6 +47,9 @@
     },
     "/floorings/{id}": {
       "get": {
+        "tags": [
+          "Floorings"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -48,6 +72,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Floorings"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -118,6 +145,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Floorings"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -142,6 +172,9 @@
     },
     "/floorings/create": {
       "put": {
+        "tags": [
+          "Floorings"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -208,6 +241,9 @@
     },
     "/customers/": {
       "get": {
+        "tags": [
+          "Customer"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -221,6 +257,9 @@
     },
     "/customers/{id}": {
       "get": {
+        "tags": [
+          "Customer"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -243,6 +282,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Customer"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -293,6 +335,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Customer"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -317,6 +362,9 @@
     },
     "/customers/create": {
       "put": {
+        "tags": [
+          "Customer"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -363,6 +411,9 @@
     },
     "/employees/": {
       "get": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -376,6 +427,9 @@
     },
     "/employees/{id}": {
       "get": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -398,6 +452,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -464,6 +521,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -488,6 +548,9 @@
     },
     "/employees/create": {
       "put": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -547,16 +610,184 @@
           }
         }
       }
+    },
+    "/orders/": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/orders/{id}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "product": {
+                  "type": "string",
+                  "example": "productName"
+                },
+                "quantity": {
+                  "type": "number",
+                  "example": 12
+                },
+                "pricePerSquareFoot": {
+                  "type": "number",
+                  "example": 97
+                },
+                "totalCost": {
+                  "type": "number",
+                  "example": 79
+                },
+                "paymentMethod": {
+                  "type": "string",
+                  "example": "card"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Order"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/orders/create": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "product": {
+                  "type": "string",
+                  "example": "productName"
+                },
+                "quantity": {
+                  "type": "number",
+                  "example": 12
+                },
+                "pricePerSquareFoot": {
+                  "type": "number",
+                  "example": 97
+                },
+                "totalCost": {
+                  "type": "number",
+                  "example": 79
+                },
+                "paymentMethod": {
+                  "type": "string",
+                  "example": "card"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
-  },
-  "CustomElementRegistryAPI": {
-    "title": "Customer API",
-    "version": "1.0.0",
-    "description": "Manage customers"
-  },
-  "employeeAPI": {
-    "title": "Employee API",
-    "version": "1.0.0",
-    "description": "Manage employees"
   }
 }

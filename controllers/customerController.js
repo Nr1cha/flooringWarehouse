@@ -12,7 +12,9 @@ async function getAllCustomers(req, res, next) {
     } catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Customer'] */
 }
+
 
 //get a single book
 async function getSingleCustomer(req, res, next) {
@@ -24,7 +26,10 @@ async function getSingleCustomer(req, res, next) {
     } catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Customer'] */
+
 }
+
 
 //post logic
 async function updateCustomer(req, res, next) {
@@ -52,7 +57,9 @@ async function updateCustomer(req, res, next) {
     } catch (err) {
         next(err)
     }
+    /*#swagger.tags = ['Customer'] */
 }
+
 
 // adding put logic
 async function setSingleCustomer(req, res, next) {
@@ -81,7 +88,9 @@ async function setSingleCustomer(req, res, next) {
     } catch (err) {
         next(err)
     }
+    /*#swagger.tags = ['Customer'] */
 }
+
 
 // delete logic
 async function deleteSingleCustomer(req, res, next) {
@@ -94,6 +103,8 @@ async function deleteSingleCustomer(req, res, next) {
     catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Customer'] */
 }
+
 
 module.exports = { getAllCustomers, updateCustomer, getSingleCustomer, setSingleCustomer, deleteSingleCustomer };

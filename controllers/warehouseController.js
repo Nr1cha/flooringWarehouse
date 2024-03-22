@@ -12,7 +12,9 @@ async function getAllFloorings(req, res, next) {
     } catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Floorings'] */
 }
+
 
 //get a single flooring
 async function getSingleFlooring(req, res, next) {
@@ -24,7 +26,9 @@ async function getSingleFlooring(req, res, next) {
     } catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Floorings'] */
 }
+
 
 //post logic
 async function updateFlooring(req, res, next) {
@@ -40,8 +44,10 @@ async function updateFlooring(req, res, next) {
                 date_added: 'date_added',
                 Weight_kg: 12,
                 Product_id: 34
-        }
-    } */
+        },
+        
+    },
+    #swagger.tags = ['Floorings'] */
     try {
         const payload = req.body;
         const response = await updateFlooringModel(req.params.id, payload);
@@ -58,6 +64,7 @@ async function updateFlooring(req, res, next) {
     }
 }
 
+
 // adding put logic
 async function setSingleFlooring(req, res, next) {
     /*  #swagger.parameters['body'] = {
@@ -73,16 +80,16 @@ async function setSingleFlooring(req, res, next) {
                 Weight_kg: 12,
                 Product_id: 34
         }
-    } 
+    },
     */
-
-    try {
-        const payload = req.body;
-        const response = await setSingleFlooringModel(payload);
-        res.setHeader('Content-Type', 'application/json');
-        if (response.acknowledged) {
-            res.status(204).json({
-                updated: true
+   
+   try {
+       const payload = req.body;
+       const response = await setSingleFlooringModel(payload);
+       res.setHeader('Content-Type', 'application/json');
+       if (response.acknowledged) {
+           res.status(204).json({
+               updated: true
             });
         } else {
             console.log(response)
@@ -91,7 +98,9 @@ async function setSingleFlooring(req, res, next) {
     } catch (err) {
         next(err)
     }
+    // #swagger.tags = ['Floorings']
 }
+
 
 // delete logic
 async function deleteSingleFlooring(req, res, next) {
@@ -104,6 +113,8 @@ async function deleteSingleFlooring(req, res, next) {
     catch (err) {
         next(err);
     }
+    // #swagger.tags = ['Floorings'] 
+
 }
 
 module.exports = { getAllFloorings, updateFlooring, getSingleFlooring, setSingleFlooring, deleteSingleFlooring };

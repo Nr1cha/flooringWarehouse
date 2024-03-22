@@ -12,7 +12,9 @@ async function getAllEmployees(req, res, next) {
     } catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Employee'] */
 }
+
 
 //get a single book
 async function getSingleEmployee(req, res, next) {
@@ -24,7 +26,9 @@ async function getSingleEmployee(req, res, next) {
     } catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Employee'] */
 }
+
 
 //post logic
 async function updateEmployee(req, res, next) {
@@ -56,7 +60,9 @@ async function updateEmployee(req, res, next) {
     } catch (err) {
         next(err)
     }
+    /*#swagger.tags = ['Employee'] */
 }
+
 
 // adding put logic
 async function setSingleEmployee(req, res, next) {
@@ -89,7 +95,9 @@ async function setSingleEmployee(req, res, next) {
     } catch (err) {
         next(err)
     }
+    /*#swagger.tags = ['Employee'] */
 }
+
 
 // delete logic
 async function deleteSingleEmployee(req, res, next) {
@@ -102,6 +110,8 @@ async function deleteSingleEmployee(req, res, next) {
     catch (err) {
         next(err);
     }
+    /*#swagger.tags = ['Employee'] */
 }
+
 
 module.exports = { getAllEmployees, updateEmployee, getSingleEmployee, setSingleEmployee, deleteSingleEmployee };

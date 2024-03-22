@@ -41,6 +41,20 @@ const employeeIdSchema = (req, res, next) => {
     next();
 };
 
+
+//validate employee GET-id
+const orderIdSchema = (req, res, next) => {
+    const id = req.params.id;
+
+    // Check if the id is a valid ObjectId
+    if (!ObjectId.isValid(id)) {
+        return res.status(400).json({ error: 'Invalid order id, please add a valid id' });
+    }
+
+    // If validation passes, call next() to proceed to the controller function
+    next();
+};
+
 // Define the schema
 const flooringSchema = Joi.object({
     Name: Joi.string().min(1).required(),
@@ -74,6 +88,16 @@ const employeeSchema = Joi.object({
     hire_date: Joi.number().min(1).required().strict(),
     job_title: Joi.string().min(1).required(),
     Department:Joi.string().min(1).required() 
+});
+
+
+// Define SECOND schema
+const orderSchema = Joi.object({
+    product: Joi.string().min(1).required(),
+    quantity: Joi.number().min(1).required().strict(),
+    pricePerSquareFoot: Joi.number().min(1).required().strict(),
+    totalCost: Joi.number().min(1).required().strict(),
+    paymentMethod: Joi.string().min(1).required()
 });
 
 
@@ -118,5 +142,17 @@ const validateEmployeePost = (req, res, next) => {
     }
 };
 
+// Validate employee POST-id
+const validateOrderPost = (req, res, next) => {
+    const { error } = orderSchema.validate(req.body);
 
-module.exports = { flooringIdSchema, customerIdSchema, employeeIdSchema, validateFlooringPost, validateCustomerPost, validateEmployeePost };
+    if (error) {
+        // There are errors. Render the form again with sanitized values/error messages.
+        res.status(400).json({ errors: error.details });
+    } else {
+        // Data from form is valid.
+        next();
+    }
+};
+
+module.exports = { flooringIdSchema, customerIdSchema, employeeIdSchema, validateFlooringPost, validateCustomerPost, validateEmployeePost, validateOrderPost, orderIdSchema };

@@ -38,6 +38,7 @@ app.use('/', routes) //protect all routes
 // Add the /profile route from the first code block
 app.get('/profile', requiresAuth(), (req, res) => {
     res.send(`hello ${req.oidc.user.name}`);
+    // #swagger.tags = ['Floorings']
 });
 
 //error handling
