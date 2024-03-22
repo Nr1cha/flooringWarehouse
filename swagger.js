@@ -3,17 +3,17 @@ const swaggerAutoGen = require('swagger-autogen')();
 
 const swaggerDefinition = (host, lane) => ({
     info: {
-        title: 'Flooring API',
+        title: 'Flooring Warehouse API',
         version: '1.0.0',
         description: 'Manage products',
     },
     host: host, // Change this to your actual host
     schemes: lane === 'local' ? ['http'] : ['https'], // Use 'https' if applicable
     tags: [
-        { name: 'Floorings', description: 'Operations related to floorings' },
-        { name: 'Customer', description: 'Operations related to customers' },
-        { name: 'Employee', description: 'Operations related to employees' },
-        { name: 'Order', description: 'Operations related to orders' }
+        { name: 'Floorings', description: 'floorings endpoints' },
+        { name: 'Customer', description: 'customers endpoints' },
+        { name: 'Employee', description: 'employees endpoints' },
+        { name: 'Order', description: 'orders endpoints' }
     ]
     // // adding the member API definition
     // CustomElementRegistryAPI: {

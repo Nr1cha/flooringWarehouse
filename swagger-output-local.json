@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Flooring API",
+    "title": "Flooring Warehouse API",
     "version": "1.0.0",
     "description": "Manage products"
   },
@@ -10,19 +10,19 @@
   "tags": [
     {
       "name": "Floorings",
-      "description": "Operations related to floorings"
+      "description": "floorings endpoints"
     },
     {
       "name": "Customer",
-      "description": "Operations related to customers"
+      "description": "customers endpoints"
     },
     {
       "name": "Employee",
-      "description": "Operations related to employees"
+      "description": "employees endpoints"
     },
     {
       "name": "Order",
-      "description": "Operations related to orders"
+      "description": "orders endpoints"
     }
   ],
   "schemes": [
@@ -365,7 +365,8 @@
         "tags": [
           "Customer"
         ],
-        "description": "",
+        "summary": "adding new item to db",
+        "description": "this endpoint tests adding something new to the db",
         "produces": [
           "application/json"
         ],

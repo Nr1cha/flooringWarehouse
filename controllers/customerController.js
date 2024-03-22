@@ -88,7 +88,9 @@ async function setSingleCustomer(req, res, next) {
     } catch (err) {
         next(err)
     }
-    /*#swagger.tags = ['Customer'] */
+    /*#swagger.tags = ['Customer'],
+    #swagger.summary = 'adding new item to db',
+    #swagger.description = 'this endpoint tests adding something new to the db' */
 }
 
 
