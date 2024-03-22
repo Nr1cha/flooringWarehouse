@@ -10,19 +10,19 @@
   "tags": [
     {
       "name": "Floorings",
-      "description": "floorings endpoints"
+      "description": "floorings API"
     },
     {
       "name": "Customer",
-      "description": "customers endpoints"
+      "description": "customers API"
     },
     {
       "name": "Employee",
-      "description": "employees endpoints"
+      "description": "employees API"
     },
     {
       "name": "Order",
-      "description": "orders endpoints"
+      "description": "orders API"
     }
   ],
   "schemes": [

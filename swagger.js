@@ -10,10 +10,10 @@ const swaggerDefinition = (host, lane) => ({
     host: host, // Change this to your actual host
     schemes: lane === 'local' ? ['http'] : ['https'], // Use 'https' if applicable
     tags: [
-        { name: 'Floorings', description: 'floorings endpoints' },
-        { name: 'Customer', description: 'customers endpoints' },
-        { name: 'Employee', description: 'employees endpoints' },
-        { name: 'Order', description: 'orders endpoints' }
+        { name: 'Floorings', description: 'floorings API' },
+        { name: 'Customer', description: 'customers API' },
+        { name: 'Employee', description: 'employees API' },
+        { name: 'Order', description: 'orders API' }
     ]
     // // adding the member API definition
     // CustomElementRegistryAPI: {
