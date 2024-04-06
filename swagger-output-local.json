@@ -495,7 +495,7 @@
                 },
                 "hire_date": {
                   "type": "number",
-                  "example": 0.0004997501249375312
+                  "example": 1
                 },
                 "job_title": {
                   "type": "string",
@@ -585,7 +585,7 @@
                 },
                 "hire_date": {
                   "type": "number",
-                  "example": 0.0004997501249375312
+                  "example": 1
                 },
                 "job_title": {
                   "type": "string",

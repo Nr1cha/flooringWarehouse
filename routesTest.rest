@@ -46,6 +46,14 @@ content-type: application/json
 
 
 
+
+
+
+
+
+
+
+
 # TESTING CUSTOMER
 ###
 GET http://localhost:3000/customers/ HTTP/1.1
@@ -97,6 +105,47 @@ content-type: application/json
 
 
 
+# TESTING CUSTOMER
+###
+GET http://localhost:3000/employees/ HTTP/1.1
+content-type: application/json
+###
+
+
+
+GET http://localhost:3000/employees/65fb5306bb2dc7041c331748 HTTP/1.1
+content-type: application/json
+###
+
+
+
+POST http://localhost:3000/employees/65fb5306bb2dc7041c331748 HTTP/1.1
+content-type: application/json
+
+{
+                "firstName": "NiCk",
+                "lastName": "RiCaRdS",
+                "email": "example@email.com",
+                "phoneNumber": 555555555
+}
+
+###
+
+
+PUT http://localhost:3000/employees/create HTTP/1.1
+content-type: application/json
+
+{
+                "firstName": "tester",
+                "lastName": "rester",
+                "email": "example@email.com",
+                "phoneNumber": 777777777
+}
+
+
+###
+DELETE http://localhost:3000/employees/65fb57cb324624a393f5c8d4 HTTP/1.1
+content-type: application/json
 
 
 
@@ -106,56 +155,130 @@ content-type: application/json
 
 
 
-# ###
+
+
+
+
+
+
+# TESTING CUSTOMER
+###
+GET http://localhost:3000/orders/ HTTP/1.1
+content-type: application/json
+###
+
+
+
+GET http://localhost:3000/orders/65fb5306bb2dc7041c331748 HTTP/1.1
+content-type: application/json
+###
+
+
+
+POST http://localhost:3000/orders/65fb5306bb2dc7041c331748 HTTP/1.1
+content-type: application/json
+
+{
+                "firstName": "NiCk",
+                "lastName": "RiCaRdS",
+                "email": "example@email.com",
+                "phoneNumber": 555555555
+}
+
+###
+
+
+PUT http://localhost:3000/orders/create HTTP/1.1
+content-type: application/json
+
+{
+                "firstName": "tester",
+                "lastName": "rester",
+                "email": "example@email.com",
+                "phoneNumber": 777777777
+}
+
+
+###
+DELETE http://localhost:3000/orders/65fb57cb324624a393f5c8d4 HTTP/1.1
+content-type: application/json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+
 # # RENDER PROD TESTING
 
 
-# GET https://library-wkyz.onrender.com/books HTTP/1.1
-# content-type: application/json
-# ###
+GET https://flooringwarehouse.onrender.com/floorings HTTP/1.1
+content-type: application/json
+###
 
 
 
-# GET https://library-wkyz.onrender.com/books/65c6b153471d16e6f273725d HTTP/1.1
-# content-type: application/json
-# ###
+
+GET https://flooringwarehouse.onrender.com/floorings/65d8fa6397cd4bcc1bc810a2 HTTP/1.1
+content-type: application/json
+###
 
 
 
-# POST https://library-wkyz.onrender.com/books/65c6b153471d16e6f273725d HTTP/1.1
-# content-type: application/json
+POST https://flooringwarehouse.onrender.com/floorings/65d8fa6397cd4bcc1bc810a1 HTTP/1.1
+content-type: application/json
 
-# {
-#                 "Name": "Name",
-#                 "Description": "Description",
-#                 "Price": "Price",
-#                 "Category": "Category",
-#                 "Stock": "Stock",
-#                 "Manufacturer": "Manufacturer",
-#                 "date_added": "date_added",
-#                 "Weight_kg": "Weight_kg",
-#                 "Product_id": "Product_id"
-# }
+{
+                "Name": "Name",
+                "Description": "Description",
+                "Price": "Price",
+                "Category": "Category",
+                "Stock": "Stock",
+                "Manufacturer": "Manufacturer",
+                "date_added": "date_added",
+                "Weight_kg": "Weight_kg",
+                "Product_id": "Product_id"
+}
 
-# ###
-
-
-# PUT https://library-wkyz.onrender.com/books/create HTTP/1.1
-# content-type: application/json
-
-# {
-#                 "Name": "Name",
-#                 "Description": "Description",
-#                 "Price": "Price",
-#                 "Category": "Category",
-#                 "Stock": "Stock",
-#                 "Manufacturer": "Manufacturer",
-#                 "date_added": "date_added",
-#                 "Weight_kg": "Weight_kg",
-#                 "Product_id": "Product_id"
-# }
+###
 
 
-# ###
-# DELETE https://library-wkyz.onrender.com/books/65b5c7ed8d64a476bba785e0 HTTP/1.1
-# content-type: application/json
+PUT https://flooringwarehouse.onrender.com/floorings/create HTTP/1.1
+content-type: application/json
+
+{
+                "Name": "Name",
+                "Description": "Description",
+                "Price": "Price",
+                "Category": "Category",
+                "Stock": "Stock",
+                "Manufacturer": "Manufacturer",
+                "date_added": "date_added",
+                "Weight_kg": "Weight_kg",
+                "Product_id": "Product_id"
+}
+
+
+###
+DELETE https://flooringwarehouse.onrender.com/floorings/65d8fa6397cd4bcc1bc810a0 HTTP/1.1
+content-type: application/json
