@@ -42,8 +42,8 @@ app.use('/', customerRoute);
 
 
 describe('GET /', () => {
-  it('should return a 500 status code because it is not expected to work in this case', async () => { //message
-    const response = await request(app).get('/');
-    expect(response.status).toBe(500); //expecting a 500 error 
-  });
+    it('should return a 500 status code because it is not expected to work in this case', async () => { //message
+        const response = await request(app).get('/');
+        expect(response.status).toBe(500); //expecting a 500 error 
+    });
 });
