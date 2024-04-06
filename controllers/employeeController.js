@@ -41,7 +41,7 @@ async function updateEmployee(req, res, next) {
                 emp_id: 97,
                 emp_email: 'example@email.com',
                 emp_phone: 555555555,
-                hire_date: 12/12/2001,
+                hire_date: 1,
                 job_title: 'manager',
                 Department: 'flooring'
         }
@@ -75,7 +75,7 @@ async function setSingleEmployee(req, res, next) {
                 emp_id: 97,
                 emp_email: 'example@email.com',
                 emp_phone: 555555555,
-                hire_date: 12/12/2001,
+                hire_date: 1,
                 job_title: 'manager',
                 Department: 'flooring'
         }
