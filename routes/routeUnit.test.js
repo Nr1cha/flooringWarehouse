@@ -1,9 +1,9 @@
 const fs = require('fs');
 let customer = 'customer';
 
-const request = require('supertest'); // Supertest for HTTP requests
+const request = require('supertest');
 const express = require('express');
-const customerRoute = require('./customer'); // Your customer route file
+const customerRoute = require('./customer');
 
 
 test(`file "${customer}.js" exists`, () => {
@@ -40,9 +40,10 @@ test('file "server.js" exists', () => {
 const app = express();
 app.use('/', customerRoute);
 
+
 describe('GET /', () => {
-  it('should return a 500 status code because it is not expected to work in this case', async () => {
+  it('should return a 500 status code because it is not expected to work in this case', async () => { //message
     const response = await request(app).get('/');
-    expect(response.status).toBe(500);
+    expect(response.status).toBe(500); //expecting a 500 error 
   });
 });
